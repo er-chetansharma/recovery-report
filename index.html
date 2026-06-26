@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Recovery Insights | Consciousversity</title>
+  <meta name="description" content="A personalized look at how your nervous system is currently balancing protection and recovery.">
+
+  <!-- ============================================
+       FONTS
+       Fraunces: editorial serif for headings — warm,
+       human, slightly organic. Avoids the cold/clinical
+       feel while staying premium.
+       Inter: calm, highly legible body sans-serif.
+       ============================================ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============================================
+       LOADING EXPERIENCE
+       Shown immediately on page load, before the
+       real content is revealed. Pure CSS + minimal JS.
+       Respects prefers-reduced-motion (handled in JS).
+       ============================================ -->
+  <div id="loader" class="loader" role="status" aria-live="polite">
+    <div class="loader__mark" aria-hidden="true">
+      <svg viewBox="0 0 64 64" class="loader__ring">
+        <circle cx="32" cy="32" r="28" class="loader__ring-track"></circle>
+        <circle cx="32" cy="32" r="28" class="loader__ring-progress"></circle>
+      </svg>
+    </div>
+    <p class="loader__text" id="loaderText">Analyzing your responses&hellip;</p>
+  </div>
+
+  <!-- ============================================
+       MAIN EXPERIENCE
+       Hidden until loader completes, then revealed.
+       ============================================ -->
+  <main id="experience" class="experience" hidden>
+
+    <!-- ============================================
+         SECTION 1 — ASSESSMENT COMPLETE
+         ============================================ -->
+    <section class="section section--hero" aria-labelledby="hero-heading">
+      <div class="container">
+        <div class="reveal" data-reveal>
+          <div class="success-mark" aria-hidden="true">
+            <svg viewBox="0 0 56 56" class="success-mark__svg">
+              <circle cx="28" cy="28" r="26" class="success-mark__circle"></circle>
+              <path d="M17 28.5L24.5 36L39 19" class="success-mark__check"></path>
+            </svg>
+          </div>
+          <p class="eyebrow">Assessment complete</p>
+          <h1 id="hero-heading" class="display-xl">
+            Thank you, <span data-var="firstName">there</span>.
+          </h1>
+          <p class="lede">
+            We've identified patterns that may be influencing how your nervous
+            system is responding to stress, recovery, and daily life.
+          </p>
+        </div>
+      </div>
+      <div class="hero-divider" aria-hidden="true"></div>
+    </section>
+
+    <!-- ============================================
+         SECTION 2 — RECOVERY INSIGHTS (teaser cards)
+         ============================================ -->
+    <section class="section" aria-labelledby="insights-heading">
+      <div class="container">
+        <div class="section-head reveal" data-reveal>
+          <p class="eyebrow">What we noticed</p>
+          <h2 id="insights-heading" class="display-lg">Your Recovery Insights</h2>
+          <p class="section-sub">
+            Three early patterns from your responses. Your full picture goes
+            deeper — this is just the surface.
+          </p>
+        </div>
+
+        <div class="insight-grid">
+
+          <article class="insight-card reveal" data-reveal data-delay="0">
+            <div class="insight-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 40 40" class="icon-stroke">
+                <path d="M6 22c3-7 6-7 9 0s6 7 9 0 6-7 9 0" />
+                <circle cx="20" cy="20" r="17" class="icon-stroke--faint"/>
+              </svg>
+            </div>
+            <h3 class="insight-card__title">Stress Recovery</h3>
+            <p class="insight-card__text">
+              Your body may be taking longer than it needs to return to calm
+              after everyday stress.
+            </p>
+            <div class="confidence" aria-hidden="true">
+              <span class="confidence__label">Pattern confidence</span>
+              <div class="confidence__track"><div class="confidence__fill" data-fill="72"></div></div>
+            </div>
+          </article>
+
+          <article class="insight-card reveal" data-reveal data-delay="1">
+            <div class="insight-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 40 40" class="icon-stroke">
+                <path d="M8 26c4-10 8-16 12-16s8 6 12 16" />
+                <path d="M8 26h24" class="icon-stroke--faint" />
+              </svg>
+            </div>
+            <h3 class="insight-card__title">Sleep Quality</h3>
+            <p class="insight-card__text">
+              There are early signs your sleep may be lighter or less
+              restorative than it could be.
+            </p>
+            <div class="confidence" aria-hidden="true">
+              <span class="confidence__label">Pattern confidence</span>
+              <div class="confidence__track"><div class="confidence__fill" data-fill="64"></div></div>
+            </div>
+          </article>
+
+          <article class="insight-card reveal" data-reveal data-delay="2">
+            <div class="insight-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 40 40" class="icon-stroke">
+                <circle cx="20" cy="14" r="6" />
+                <path d="M11 33c0-7 4-12 9-12s9 5 9 12" class="icon-stroke--faint" />
+              </svg>
+            </div>
+            <h3 class="insight-card__title">Body Tension</h3>
+            <p class="insight-card__text">
+              Responses suggest tension may be held physically, even when
+              things feel calm on the surface.
+            </p>
+            <div class="confidence" aria-hidden="true">
+              <span class="confidence__label">Pattern confidence</span>
+              <div class="confidence__track"><div class="confidence__fill" data-fill="68"></div></div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 3 — UNDERSTANDING YOUR PATTERN
+         ============================================ -->
+    <section class="section section--tinted" aria-labelledby="pattern-heading">
+      <div class="container">
+        <div class="pattern-layout">
+          <div class="reveal" data-reveal>
+            <p class="eyebrow">The bigger picture</p>
+            <h2 id="pattern-heading" class="display-lg">Understanding your pattern</h2>
+            <p class="section-sub">
+              Right now, your nervous system may be spending more time in
+              <strong>protection</strong> than in <strong>recovery</strong>.
+              Neither state is wrong — but balance is what allows the body to
+              actually repair.
+            </p>
+          </div>
+
+          <div class="pattern-visual reveal" data-reveal data-delay="1" aria-hidden="true">
+            <svg viewBox="0 0 200 200" class="pattern-rings">
+              <circle cx="100" cy="100" r="86" class="pattern-rings__track" />
+              <circle cx="100" cy="100" r="86" class="pattern-rings__protection" data-ring="protection" />
+              <circle cx="100" cy="100" r="60" class="pattern-rings__track" />
+              <circle cx="100" cy="100" r="60" class="pattern-rings__recovery" data-ring="recovery" />
+              <text x="100" y="96" class="pattern-rings__label-outer">Protection</text>
+              <text x="100" y="116" class="pattern-rings__label-inner">Recovery</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 4 — RECOVERY BALANCE VISUALIZATION
+         (Signature element)
+         ============================================ -->
+    <section class="section section--balance" aria-labelledby="balance-heading">
+      <div class="container">
+        <div class="section-head reveal" data-reveal>
+          <p class="eyebrow">Your current balance</p>
+          <h2 id="balance-heading" class="display-lg">Protection vs. Recovery</h2>
+          <p class="section-sub">
+            A simple way to see what your responses suggest is happening
+            beneath the surface.
+          </p>
+        </div>
+
+        <div class="balance-viz reveal" data-reveal data-delay="1">
+          <div class="balance-row">
+            <div class="balance-row__label">
+              <span class="balance-row__name">Protection</span>
+              <span class="balance-row__value" data-count="78">0%</span>
+            </div>
+            <div class="balance-row__track">
+              <div class="balance-row__fill balance-row__fill--protection" data-fill="78"></div>
+            </div>
+          </div>
+
+          <div class="balance-row">
+            <div class="balance-row__label">
+              <span class="balance-row__name">Recovery</span>
+              <span class="balance-row__value" data-count="22">0%</span>
+            </div>
+            <div class="balance-row__track">
+              <div class="balance-row__fill balance-row__fill--recovery" data-fill="22"></div>
+            </div>
+          </div>
+
+          <p class="balance-viz__caption">
+            Based on your responses today. This shifts as your nervous system
+            recalibrates.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 5 — WHY THIS MATTERS
+         ============================================ -->
+    <section class="section" aria-labelledby="why-heading">
+      <div class="container">
+        <div class="section-head reveal" data-reveal>
+          <p class="eyebrow">Why this matters</p>
+          <h2 id="why-heading" class="display-lg">Why patterns like this tend to repeat</h2>
+        </div>
+
+        <div class="why-grid">
+          <div class="why-card reveal" data-reveal data-delay="0">
+            <span class="why-card__num" aria-hidden="true">A</span>
+            <h3 class="why-card__title">Symptoms are downstream</h3>
+            <p class="why-card__text">
+              What shows up as poor sleep, tension, or low energy is often a
+              symptom of a deeper regulation pattern — not the root cause
+              itself.
+            </p>
+          </div>
+          <div class="why-card reveal" data-reveal data-delay="1">
+            <span class="why-card__num" aria-hidden="true">B</span>
+            <h3 class="why-card__title">The body keeps the score</h3>
+            <p class="why-card__text">
+              Without addressing the underlying pattern, the body tends to
+              return to it — even after short-term relief.
+            </p>
+          </div>
+          <div class="why-card reveal" data-reveal data-delay="2">
+            <span class="why-card__num" aria-hidden="true">C</span>
+            <h3 class="why-card__title">Awareness changes the equation</h3>
+            <p class="why-card__text">
+              Once you can see the pattern clearly, you can begin working
+              with it — instead of being shaped by it without realizing.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 6 — RECOVERY BLUEPRINT SESSION (priority)
+         ============================================ -->
+    <section class="section section--pricing" aria-labelledby="pricing-heading" id="recovery-blueprint">
+      <div class="container">
+        <div class="pricing-card reveal" data-reveal>
+          <p class="eyebrow eyebrow--on-dark">Your next step</p>
+          <h2 id="pricing-heading" class="display-lg pricing-card__title">
+            Recovery Blueprint Session
+          </h2>
+          <p class="pricing-card__sub">
+            A focused one-on-one session to walk through your full results
+            and what they suggest for your specific pattern.
+          </p>
+
+          <div class="pricing-card__price">
+            <span class="pricing-card__currency">&#8377;</span>
+            <span class="pricing-card__amount">199</span>
+            <span class="pricing-card__duration">&middot; 30 minutes</span>
+          </div>
+
+          <ul class="pricing-card__list">
+            <li>Your complete Recovery Insights report, explained</li>
+            <li>A clear view of your protection-to-recovery pattern</li>
+            <li>Personalized guidance for what to focus on first</li>
+            <li>Space for your specific questions, answered directly</li>
+          </ul>
+
+          <button type="button" class="btn btn--primary btn--block" id="bookingButton">
+            Book My Recovery Blueprint Session
+          </button>
+
+          <p class="pricing-card__note">Private &amp; confidential &middot; No obligation</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 7 — FAQ
+         ============================================ -->
+    <section class="section" aria-labelledby="faq-heading">
+      <div class="container">
+        <div class="section-head reveal" data-reveal>
+          <p class="eyebrow">Good to know</p>
+          <h2 id="faq-heading" class="display-lg">Frequently asked questions</h2>
+        </div>
+
+        <div class="accordion" data-accordion>
+
+          <div class="accordion__item reveal" data-reveal data-delay="0">
+            <button class="accordion__trigger" aria-expanded="false" aria-controls="faq-1" id="faq-1-trigger">
+              <span>Is this a diagnosis?</span>
+              <span class="accordion__icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion__panel" id="faq-1" role="region" aria-labelledby="faq-1-trigger" hidden>
+              <p>No. This is an educational, self-observation tool — not a
+              medical or psychological diagnosis. It's designed to help you
+              understand patterns, not label you.</p>
+            </div>
+          </div>
+
+          <div class="accordion__item reveal" data-reveal data-delay="1">
+            <button class="accordion__trigger" aria-expanded="false" aria-controls="faq-2" id="faq-2-trigger">
+              <span>Why can't I see my full report?</span>
+              <span class="accordion__icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion__panel" id="faq-2" role="region" aria-labelledby="faq-2-trigger" hidden>
+              <p>Your full report includes personal context that's best
+              understood with guidance, not read in isolation. The Recovery
+              Blueprint Session is where we walk through it together, so it's
+              clear and useful rather than just a list of data points.</p>
+            </div>
+          </div>
+
+          <div class="accordion__item reveal" data-reveal data-delay="2">
+            <button class="accordion__trigger" aria-expanded="false" aria-controls="faq-3" id="faq-3-trigger">
+              <span>What happens during the session?</span>
+              <span class="accordion__icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion__panel" id="faq-3" role="region" aria-labelledby="faq-3-trigger" hidden>
+              <p>We go through your results together, talk through what they
+              mean in the context of your daily life, and outline what
+              focusing on first would look like for you specifically.</p>
+            </div>
+          </div>
+
+          <div class="accordion__item reveal" data-reveal data-delay="3">
+            <button class="accordion__trigger" aria-expanded="false" aria-controls="faq-4" id="faq-4-trigger">
+              <span>Will &#8377;199 be adjusted if I join the program?</span>
+              <span class="accordion__icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion__panel" id="faq-4" role="region" aria-labelledby="faq-4-trigger" hidden>
+              <p>Yes. If you choose to continue into the full program
+              afterward, your session fee is credited toward it. There's no
+              pressure either way.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 8 — TRUST
+         ============================================ -->
+    <section class="section section--tinted" aria-labelledby="trust-heading">
+      <div class="container">
+        <div class="section-head reveal" data-reveal>
+          <h2 id="trust-heading" class="display-md">What you can expect from us</h2>
+        </div>
+        <div class="trust-grid">
+          <div class="trust-item reveal" data-reveal data-delay="0">
+            <span class="trust-item__mark" aria-hidden="true">&#9670;</span>
+            <span>Private &amp; confidential</span>
+          </div>
+          <div class="trust-item reveal" data-reveal data-delay="1">
+            <span class="trust-item__mark" aria-hidden="true">&#9670;</span>
+            <span>Educational, not clinical</span>
+          </div>
+          <div class="trust-item reveal" data-reveal data-delay="2">
+            <span class="trust-item__mark" aria-hidden="true">&#9670;</span>
+            <span>Evidence-informed approach</span>
+          </div>
+          <div class="trust-item reveal" data-reveal data-delay="3">
+            <span class="trust-item__mark" aria-hidden="true">&#9670;</span>
+            <span>Root-cause focused</span>
+          </div>
+          <div class="trust-item reveal" data-reveal data-delay="4">
+            <span class="trust-item__mark" aria-hidden="true">&#9670;</span>
+            <span>Personalized guidance</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 9 — FINAL CTA
+         ============================================ -->
+    <section class="section section--final" aria-labelledby="final-heading">
+      <div class="container">
+        <div class="reveal" data-reveal>
+          <h2 id="final-heading" class="display-lg final-cta__heading">
+            You've already taken the first step.
+          </h2>
+          <p class="final-cta__text">
+            Let's understand what's really happening — and build your
+            recovery from there.
+          </p>
+          <button type="button" class="btn btn--primary btn--lg js-book-trigger">
+            Book My Recovery Blueprint Session
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer class="footer">
+      <div class="container footer__inner">
+        <p class="footer__brand">Consciousversity</p>
+        <p class="footer__line">&copy; 2026 Consciousversity. All rights reserved.</p>
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
