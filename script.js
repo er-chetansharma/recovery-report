@@ -274,16 +274,8 @@
     var bookingTriggers = document.querySelectorAll('#bookingButton, .js-book-trigger');
 
     function openBooking() {
-      // --- CALENDLY INTEGRATION POINT ---
-      // if (window.Calendly) {
-      //   window.Calendly.initPopupWidget({ url: 'YOUR_CALENDLY_URL' });
-      //   return;
-      // }
-      var target = document.getElementById('recovery-blueprint');
-      if (target) {
-        target.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'start' });
-      }
-    }
+  window.location.href = "https://rzp.io/rzp/a2IcTs5";
+}
 
     bookingTriggers.forEach(function (btn) {
       btn.addEventListener('click', openBooking);
